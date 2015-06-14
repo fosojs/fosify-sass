@@ -1,6 +1,6 @@
 {
   "name": "fosify-sass",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Fosify plugin for bundling SASS files.",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   "homepage": "https://github.com/zkochan/fosify-sass",
   "dependencies": {
     "async": "^1.2.1",
-    "fosify-util": "0.0.2",
+    "fosify-util": "0.0.3",
     "gaze": "^0.5.1",
     "glob": "^5.0.10",
     "node-sass": "^3.2.0"
