@@ -1,29 +1,39 @@
 {
   "name": "fosify-sass",
-  "version": "0.0.2",
-  "description": "A Fosify plugin for bundling SASS files.",
+  "version": "0.1.0",
+  "description": "A foso plugin for bundling SASS files.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/**/*.js",
+    "postinstall": "register",
+    "preuninstall": "unregister"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zkochan/fosify-sass.git"
+    "url": "https://github.com/fosojs/fosify-sass.git"
   },
   "keywords": [
     "fosify"
   ],
-  "author": "Zoltan Kochan",
+  "author": {
+    "name": "Zoltan Kochan",
+    "email": "zoltan.kochan@gmail.com",
+    "url": "http://kochan.io"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zkochan/fosify-sass/issues"
+    "url": "https://github.com/fosojs/fosify-sass/issues"
   },
-  "homepage": "https://github.com/zkochan/fosify-sass",
+  "homepage": "https://github.com/fosojs/fosify-sass",
   "dependencies": {
     "async": "^1.2.1",
-    "fosify-util": "0.0.3",
+    "fosify": "^0.4.4",
     "gaze": "^0.5.1",
     "glob": "^5.0.10",
     "node-sass": "^3.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5"
   }
 }

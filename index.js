@@ -6,7 +6,8 @@ var path = require('path');
 var fs = require('fs');
 var async = require('async');
 var gaze = require('gaze');
-var futil = require('fosify-util');
+var futil = require('fosify');
+var pkg = require('./package.json');
 
 function bundleSass(opts, cb) {
   cb = cb || futil.noop;
@@ -40,6 +41,8 @@ function bundleSass(opts, cb) {
 }
 
 function bundle(opts, cb) {
+  futil.notifyUpdate(pkg);
+
   bundleSass(opts, function() {
     if (opts.watch) {
       gaze(opts.src + '/**/*.{sass,scss}', function(err, watcher) {
