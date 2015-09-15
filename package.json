@@ -27,10 +27,10 @@
   "homepage": "https://github.com/fosojs/fosify-sass",
   "dependencies": {
     "async": "^1.2.1",
-    "fosify": "^0.4.9",
+    "fosify": "^0.5.0",
     "gaze": "^0.5.1",
     "glob": "^5.0.10",
-    "node-sass": "^3.2.0"
+    "node-sass": "^3.3.2"
   },
   "devDependencies": {
     "chai": "^3.0.0",
