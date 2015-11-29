@@ -13,7 +13,7 @@ function bundleSass(opts, cb) {
   cb = cb || futil.noop;
 
   var src = opts.src;
-  var dest = opts.dest || './build';
+  var dest = opts.dest || './dist';
   var createPath = futil.bundleNamer({
     src: src,
     extension: 'css'
@@ -40,21 +40,27 @@ function bundleSass(opts, cb) {
   });
 }
 
-function bundle(opts, cb) {
+module.exports = function(plugin, opts, next) {
   futil.notifyUpdate(pkg);
 
-  bundleSass(opts, function() {
-    if (opts.watch) {
+  plugin.expose('bundle', function(cb) {
+    cb = cb || function() {};
+    bundleSass(opts, function() {
+      cb();
+      if (!opts.watch) {
+        return;
+      }
       gaze(opts.src + '/**/*.{sass,scss}', function(err, watcher) {
-        watcher.on('all', function() {
-          bundleSass(opts);
-        });
+        watcher.on('all', () => bundleSass(opts));
       });
-    }
-
-    cb();
+    });
   });
-}
 
-module.exports = bundle;
-module.exports.extensions = ['css'];
+  plugin.root.extensions.push('css');
+
+  next();
+};
+
+module.exports.attributes = {
+  pkg: pkg
+};
