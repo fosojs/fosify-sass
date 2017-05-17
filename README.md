@@ -1,5 +1,7 @@
 # fosify-sass
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fosojs/fosify-sass.svg)](https://greenkeeper.io/)
+
 A foso plugin for bundling SASS files.
 
 [![Dependency Status](https://david-dm.org/fosojs/fosify-sass/status.svg?style=flat)](https://david-dm.org/fosojs/fosify-sass)
